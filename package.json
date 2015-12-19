@@ -1,13 +1,14 @@
 {
-  "name": "vagas-interview-test",
+  "name": "ficticia-videos",
   "version": "0.1.0",
+  "description": "ficticia-videos",
+  "main": "gruntfile.js",
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-contrib": "~0.10.0",
-    "grunt-contrib-clean": "~0.7.0",
-    "grunt-contrib-watch": "~0.6.0",
-    "grunt-contrib-cssmin": "~0.14.0",
-    "grunt-contrib-imagemin": "~1.0.0",
-    "grunt-contrib-compass": "~1.0.4"
+    "grunt-contrib-compass": ">=0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gdomiciano/FicticiaVideos.git"
   }
 }
