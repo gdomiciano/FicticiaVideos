@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ficticiavideos">
+<head>
+    <meta charset="UTF-8">
+    <title>Fictícia Videos</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+    <header>
+        <div class="content">
+            <h1><a href="" class="logo">Fictícia Vídeos</a></h1>
+            <div class="controls">
+                <div class="search"></div>
+                <nav class="menu">
+                    <a href="" class="menu-btn"></a>
+                    <div class="menu-box">
+                        <ul>
+                            <li>Destaques</li>
+                            <li>Videos</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main ng-controller="videosController">
+        <div class="main-container"></div>
+        <player title="a" views="b" date="c" videoid="d" description="e"></player>
+        <section class="more-videos">
+            <h2 class="title"></h2>
+            <div class="videos-box">
+                <div class="video">
+                    <img src="" alt="" class="video-thumb">
+                    <h3 class="video-title"></h3>
+                    <p class="views"></p>
+                </div>
+                <div class="video">
+                    <img src="" alt="" class="video-thumb">
+                    <h3 class="video-title"></h3>
+                    <p class="views"></p>
+                </div>
+                <div class="video">
+                    <img src="" alt="" class="video-thumb">
+                    <h3 class="video-title"></h3>
+                    <p class="views"></p>
+                </div>
+                <div class="video">
+                    <img src="" alt="" class="video-thumb">
+                    <h3 class="video-title"></h3>
+                    <p class="views"></p>
+                </div>
+            </div>
+            <button class="btn btn-more">Carregar mais Vídeos...</button>
+        </section>
+    </main>
+    <script src="../static/js/lib/angular.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/directives/directives.js"></script>
+    <script>
+        function googleApiClientReady() {
+
+            var apiKey = 'your api key';
+
+            gapi.client.setApiKey('AIzaSyCFdaj4QE2lVKa0Co59F0__9W1kx7rgJnI');
+            gapi.client.load('youtube', 'v3', function() {
+
+                request = gapi.client.youtube.search.list({
+                    part: 'snippet',
+                    channelId: 'UC8gFli40Dce7NvajaJcYI8Q',
+                    order: 'date',
+                    type: 'video'
+
+                });
+
+                request.execute(function(response) {
+                        console.log(response);
+
+                });
+            });
+
+        }
+      </script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+</body>
+</html>
